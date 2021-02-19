@@ -25,9 +25,9 @@ public struct GetRestaurantsRemoteDataSource: DataSource {
     public func execute(request: Request?) -> AnyPublisher<Response, Error> {
         return Future<[RestaurantResponse], Error> { completion in
             
-//            guard let request = request else { return completion(.failure(URLError.invalidRequest)) }
+            guard let request = request else { return completion(.failure(URLError.invalidRequest)) }
             
-            if let url = URL(string: _endpoint) {
+            if let url = URL(string: _endpoint + request) {
                 AF.request(url)
                     .validate()
                     .responseDecodable(of: RestaurantsResponse.self) { response in
