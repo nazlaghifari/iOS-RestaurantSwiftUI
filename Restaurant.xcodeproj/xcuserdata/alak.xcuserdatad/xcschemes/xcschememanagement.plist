@@ -6,8 +6,28 @@
 	<dict>
 		<key>Restaurant.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>8</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>644367DB25D713FC00245509</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>644367F125D7140000245509</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>644367FC25D7140000245509</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
