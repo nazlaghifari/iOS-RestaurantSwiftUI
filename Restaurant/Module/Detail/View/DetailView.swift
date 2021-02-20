@@ -33,9 +33,7 @@ struct DetailView: View {
             }
         }
         .onAppear {
-            if self.presenter.item == nil {
-                self.presenter.getRestaurant(request: restaurant.id)
-            }
+            self.presenter.getRestaurant(request: restaurant.id)
         }
         .navigationTitle(presenter.item?.name ?? "")
     }
@@ -50,7 +48,7 @@ extension DetailView {
     }
     
     var imageRestaurant: some View {
-        WebImage(url: URL(string: Endpoints.Gets.imageUrl.url + self.presenter.item!.pictureId ))
+        WebImage(url: URL(string: Endpoints.Gets.imageUrl.url + (self.presenter.item?.pictureId ?? "") ))
             .resizable()
             .placeholder {
                 Rectangle().foregroundColor(.gray)
