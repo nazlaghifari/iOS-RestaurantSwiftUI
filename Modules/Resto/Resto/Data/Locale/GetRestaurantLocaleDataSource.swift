@@ -48,13 +48,7 @@ public struct GetRestaurantLocaleDataSource: LocaleDataSource {
     
     public func get(id: String) -> AnyPublisher<RestaurantModuleEntity, Error> {
         return Future<RestaurantModuleEntity, Error> { completion in
-//            if let restaurantEntity = {
-//                _realm.objects(RestaurantModuleEntity.self).filter("id = '\(id)'")
-//            }().first {
-//                completion(.success(restaurantEntity))
-//            } else {
-//                completion(.failure(DatabaseError.invalidInstance))
-//            }
+
             let restaurants: Results<RestaurantModuleEntity> = {
                 _realm.objects(RestaurantModuleEntity.self)
                     .filter("id = '\(id)'")
@@ -76,10 +70,7 @@ public struct GetRestaurantLocaleDataSource: LocaleDataSource {
             }().first {
                 do {
                     try _realm.write {
-//                        restaurantEntity.setValue(entity.restaurantDescription, forKey: "restaurantDescription")
                         restaurantEntity.setValue(entity.favorite, forKey: "favorite")
-//                        restaurantEntity.setValue(entity.city, forKey: "city")
-//                        restaurantEntity.setValue(entity.rating, forKey: "rating")
                     }
                     completion(.success(true))
                 } catch {

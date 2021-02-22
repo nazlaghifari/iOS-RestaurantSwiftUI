@@ -1,6 +1,6 @@
 language: swift
-osx_image: xcode12 
+osx_image: xcode12.2 
 xcode_workspace: Restaurant.xcworkspace
 podfile: Podfile
 xcode_scheme: Restaurant
-xcode_destination: platform=iOS Simulator,OS=14.0,name=iPhone 11 Pro
+xcode_destination: platform=iOS Simulator,OS=14.2,name=iPhone 11 Pro

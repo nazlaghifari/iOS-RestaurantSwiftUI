@@ -55,7 +55,7 @@ extension HomeView {
                     VStack {
                         linkBuilder(for: restaurant) {
                             RestaurantRow(restaurant: restaurant)
-                        }
+                        }.buttonStyle(PlainButtonStyle())
                     }
                 }
             }
